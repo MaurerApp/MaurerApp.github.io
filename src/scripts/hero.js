@@ -1,14 +1,16 @@
-const heroElement = document.getElementById("hero")
 
-heroElement.addEventListener("mouseover", moveMouse)
+
+const heroElement = document.getElementById("hero")
+heroElement.addEventListener("mousemove", moveMouse)
 
 let lastX, lastY, lastD, lastDx, lastDy
 
 reset()
-
 window.onresize = function () {
     reset()
 }
+
+
 
 function reset() {
     lastX = 0
@@ -27,4 +29,5 @@ function moveMouse(e) {
     lastX = e.clientX;
     lastY = e.clientY;
 
+    console.log(lastX, lastY, lastD, lastDx, lastDy)
 }
